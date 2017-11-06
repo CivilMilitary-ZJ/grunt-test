@@ -1,0 +1,19 @@
+--mangle : 函数参数 压缩
+function show(t,e){this.name=t,this.age=e}show.prototype.get=function(){alert(this.name)};
+
+
+--compress
+function show(name,age){this.name=name,this.age=age}show.prototype.get=function(){alert(this.name)};
+
+:无参数
+function show(name,age){this.name=name;this.age=age}show.prototype.get=function(){alert(this.name)};
+
+uglifyjs file.js -c toplevel,sequences=false
+
+
+
+===================================================
+
+
+
+
